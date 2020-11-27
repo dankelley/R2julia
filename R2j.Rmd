@@ -1,0 +1,38 @@
+---
+title: moving from R to Julia
+author: Dan Kelley
+date: "`r Sys.Date()`"
+---
+
+# Multi-panel plots
+
+See https://docs.juliaplots.org/latest/layouts/
+
+## R
+
+```{R}
+par(mfrow=c(2,2))
+n <- 10
+x <- 1:n
+plot(x, rnorm(n), type="l")
+plot(x, 2*x, type="l")
+plot(x, x*(x-n), type="l")
+plot(x, exp(-x), type="l")
+```
+
+## Julia
+
+```
+using Plots
+n = 10
+x = 1:n
+l = @layout[a b; c d]
+a = plot(x, rand(n))
+b = plot(x, 2*x)
+c = plot(x, x.*(x.-n))
+d = plot(x, exp.(-x))
+plot(a, b, c, d, layout=l)
+```
+
+![result](multi_panel_plots)
+
