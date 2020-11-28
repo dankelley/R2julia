@@ -16,8 +16,11 @@ date: "`r Sys.Date()`"
 | `A <- matrix(1:4, nrow=2)` |  `A = [1 2 3 ; 4 5 6]`     | Used below.                             |
 | `A[1,3] <- 10`             |  `A[1,3] = 10`             | (Same in both)                          |
 | `as.vector(A)`             |  `vec(A)`                  | Needed for e.g. `Statistics:quantile()` |
+| `cbind(1:3, 4:6)`          |  `[1:3 4:6]`               |                                         |
 | `class(A)`                 |  `typeof(A)`               | Julia has a *lot* of types!             |
+| `dim(A)`                   |  `size(A)`                 |                                         |
 | `source("a.R")`            |  `include("a.jl")`         |                                         |
+| `t(A)`                     |  `A'`                      |                                         | 
 
 
 
