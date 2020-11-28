@@ -1,1 +1,1 @@
-R2Julia: notes on converting from R to Julia
+# Notes on converting from R to Julia
