@@ -1,4 +1,4 @@
-#set text(font:"Libertinus serif", size: 10pt)
+#set text(font:"Libertinus serif", size: 12pt)
 #set par(linebreaks: "optimized")
 #set page("us-letter",
   header: context {
@@ -9,6 +9,19 @@
 #set page(numbering: "1")
 #set heading(numbering: "1.1.1")
 #outline()
+
+
+_Preface_ Julia can be used in interactive sessions or non-interactively. This
+is often said to solve the "two-language problem", in which one language
+(python, perhaps) might be used interactively to develop an algorithm, after
+which another language (C++, perhaps) is used for practical application.  Using
+two languages imposes a burden on the analyst that is alleviated with Julia,
+which has good interactive ability and which, when compiled, rivals other
+languages. Given this, Julia is increasing in popularity.  If you are an R user
+who needs to add some very fast code to your processing toolbox, you ought to
+consider Julia. The purpose of this document is to let you know some things you
+might encounter as you explore Julia.
+
 
 = Overview
 
