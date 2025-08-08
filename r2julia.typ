@@ -1,14 +1,13 @@
-#import "@local/document:0.0.1": conf
-#show: doc => conf(
-category: "",
-title: "Hints on migrating from R to Julia",
-date: "2025-08-08",
-author: "Dan Kelley",
-preface: "",
-doc,
-)
-#set heading(numbering: "1.1.1.")
-
+#set text(font:"Libertinus serif", size: 10pt)
+#set par(linebreaks: "optimized")
+#set page("us-letter",
+  header: context {
+  if counter(page).get().first() < 2 [
+  *Hints for migrating from R to Julia #h(1fr) Dan Kelley #h(1fr) August 2025*
+]})
+#show raw.where(block: true): it => pad(left: 2em, it)
+#set page(numbering: "1")
+#set heading(numbering: "1.1.1")
 #outline()
 
 = Overview
