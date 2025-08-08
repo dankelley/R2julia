@@ -106,12 +106,15 @@ x₀ = 0.0
 ```
 
 To enter Greek letters in a Julia session (or the neovim editor), type
-`\lambda` and you will be given the choice of replacing what you typed by
-either lower- or upper-case lambda.
+`\lambda` and then TAB, to see that you have a choice of replacing what you
+typed by either lower- or upper-case lambda. (The mechanics of this, e.g. how
+you select your choice, will depend on the system you're using.)
 
-What is happening is that Julia accepts Unicode symbols.  So, for example, you
-can subscript by 0 or 1, but not by, say `x`, because subscript-x is not a
-Unicode symbol.
+Note that this is somewhat limited.  Not all symbols will be available to you.
+Julia simply accepts Unicode symbols, and so for example you cannot use a
+superscript $pi$, because that is not a permited Unicode symbol. In practice, this
+is not a serious limitation, and it is really quite pleasant to be able to 
+write code that looks like what you'd write on a blackboard (@numerical_model).
 
 
 == Brevity of notation
@@ -210,4 +213,12 @@ change material. For example, if the original plot had an x axis ranging from 0
 to 1 to capture the supplied data, and if the additional plot had data from 100
 to 101, then the plot range would be extended to show both. This is very much
 in contrast to R, which employs a sort of overpainting model.
+
+= Figures
+
+#figure(
+  image("figures/model_snapshot.png", width: 100%),
+  caption: [Snapshot of Julia code for a numerical model. Note the use of subscripts and over-tilde marks, which make the code look quite similar to mathematical notation. Also notice the use of the "within" symbol in the (nested) for loops.],
+) <numerical_model>.
+
 
