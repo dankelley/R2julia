@@ -76,6 +76,9 @@ might encounter as you explore Julia.
 
 13. The Julia community can be quite helpful to newcomers.
 
+
+2. Mutability in functions -- *FIXME: add something when I understand this better*
+
 = Details
 
 == Assignment
@@ -171,6 +174,25 @@ Ah, now you're an expert!  Well, maybe not.  Try the following, and think about 
 
 _FIXME: write material here and be *very* clear about the confusing mutable-parameter issue!_
 
+= Potential problems
+
+Some things about Julia will be so unfamiliar to R users that they deserve
+special mention and study.
+
+1. Vector/array assignment in Julia is *not* the same as assignment in R.
+   Think of it as *naming*; notice how `y` changes as `x` changes in
+   the following.
+
+   ```julia
+julia> x=[1 2 3];y=x;x[2]=20;x,y
+([1 20 3], [1 2 3])
+```
+   To get as you might in R, you must *copy* x, using e.g.
+   ```julia
+julia> x=[1 2 3];y=copy(x);x[2]=20;x,y
+([1 20 3], [1 20 3])
+```
+
 = Practical Examples
 
 
@@ -221,4 +243,21 @@ in contrast to R, which employs a sort of overpainting model.
   caption: [Snapshot of Julia code for a numerical model. Note the use of subscripts and over-tilde marks, which make the code look quite similar to mathematical notation. Also notice the use of the "within" symbol in the (nested) for loops.],
 ) <numerical_model>.
 
+a Potential problems
+
+Some things about Julia are likely to cause problems, including the following.
+
+1. Vector/array assignment in Julia is *not* the same as assignment in R.
+   Think of it as *naming*; notice how `y` changes as `x` changes in
+   the following.
+
+   ```julia
+julia> x=[1 2 3];y=x;x[2]=20;x,y
+([1 20 3], [1 2 3])
+```
+   To get as you might in R, you must *copy* x, using e.g.
+   ```julia
+julia> x=[1 2 3];y=copy(x);x[2]=20;x,y
+([1 20 3], [1 20 3])
+```
 
