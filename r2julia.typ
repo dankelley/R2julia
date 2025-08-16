@@ -193,7 +193,27 @@ julia> x=[1 2 3];y=copy(x);x[2]=20;x,y
 ([1 20 3], [1 20 3])
 ```
 
-2. If you get error 'Package x does not have y in its dependencies'
+2. Remember, `,` and `;` are very, very different.
+
+I often write e.g. `[1,2]` when I mean `[1;2]` because I want a vector.  A
+common example is in framing derivatives -- use as follows.
+
+```julia
+dx <- diff(x)
+dx <- [dx[1]; dx]
+dy <- diff(y)
+dy <- [dy[1]; dy]
+deriv <- dy ./ dx
+```
+
+
+3. If you get error 'Package x does not have y in its dependencies'
+
+Try the following, as a start.  Also, study the error messages carefully,
+looking for hints.  I've had this problem repeatedly and I'm honestly not sure
+how it works.  I think if you global system doesn't have the package, you need
+to do similar for that (just `cd ~` instead of the `cd` you see below).  But
+I'm guessing.
 
 ```julia
 cd path/to/package/source
