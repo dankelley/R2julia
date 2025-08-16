@@ -193,6 +193,14 @@ julia> x=[1 2 3];y=copy(x);x[2]=20;x,y
 ([1 20 3], [1 20 3])
 ```
 
+2. If you get error 'Package x does not have y in its dependencies'
+
+```julia
+cd path/to/package/source
+]activate .
+]add y
+```
+
 = Practical Examples
 
 
