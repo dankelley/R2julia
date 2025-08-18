@@ -206,8 +206,23 @@ dy <- [dy[1]; dy]
 deriv <- dy ./ dx
 ```
 
+3. Here are the fontsize elements:
 
-3. If you get error 'Package x does not have y in its dependencies'
+- fontsize: various text elements
+
+- titlefontsize: plot title
+
+- tickfontsize: tick labels
+
+- legendfontsize: legend entries
+
+- guidefontsize: axis names
+
+- legendtitlefontsize: legend title
+
+- annotationfontsize: extra annotations
+
+4. If you get error 'Package x does not have y in its dependencies'
 
 Try the following, as a start.  Also, study the error messages carefully,
 looking for hints.  I've had this problem repeatedly and I'm honestly not sure
