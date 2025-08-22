@@ -179,7 +179,15 @@ _FIXME: write material here and be *very* clear about the confusing mutable-para
 Some things about Julia will be so unfamiliar to R users that they deserve
 special mention and study.
 
-1. Vector/array assignment in Julia is *not* the same as assignment in R.
+1. Read error messages carefully
+
+R aggresively changes the types of values to fit a given circumstance. For example, `lapply()` 
+can take a list as its first argument (that's what the `l` indicates) but it can _also_ take anything
+that can be coerced to a list.  Similar things apply broadly throughout the language.  Julia does
+not take this approach, and this can lead to error messages about functions not being found. It
+is important to read those messages carefully, as they grow used to the Julia way of doing things.
+
+2. Vector/array assignment in Julia is *not* the same as assignment in R.
    Think of it as *naming*; notice how `y` changes as `x` changes in
    the following.
 
@@ -193,7 +201,7 @@ julia> x=[1 2 3];y=copy(x);x[2]=20;x,y
 ([1 20 3], [1 20 3])
 ```
 
-2. Remember, `,` and `;` are very, very different.
+3. Remember, `,` and `;` are very, very different.
 
 I often write e.g. `[1,2]` when I mean `[1;2]` because I want a vector.  A
 common example is in framing derivatives -- use as follows.
@@ -206,23 +214,17 @@ dy <- [dy[1]; dy]
 deriv <- dy ./ dx
 ```
 
-3. Here are the fontsize elements:
+4. Here are the fontsize elements:
 
 - fontsize: various text elements
-
 - titlefontsize: plot title
-
 - tickfontsize: tick labels
-
 - legendfontsize: legend entries
-
 - guidefontsize: axis names
-
 - legendtitlefontsize: legend title
-
 - annotationfontsize: extra annotations
 
-4. If you get error 'Package x does not have y in its dependencies'
+5. If you get error 'Package x does not have y in its dependencies'
 
 Try the following, as a start.  Also, study the error messages carefully,
 looking for hints.  I've had this problem repeatedly and I'm honestly not sure
